@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.buildship.ui.wizard.project.creation">
+		<item key="project_location" value="G:\work\abvd"/>
+		<item key="use_default_location" value="true"/>
+		<item key="gradle_user_home" value="C:\gradle-7.6"/>
+		<item key="java_home" value="C:\Program Files\Java\jdk-19"/>
+		<item key="gradle_distribution" value="GRADLE_DISTRIBUTION(LOCAL_INSTALLATION(C:\gradle-7.6))"/>
+	</section>
+</section>

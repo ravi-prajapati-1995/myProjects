@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664982727968_0" label="Java Main Sources" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664982727985_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1669976663122_9" label="Java_features_new" name="Java_features_new"/>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1671536654242_14" label="spring batch" name="spring batch">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-batch-example-1" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1664982730129_2" label="Window Working Set" name="Aggregate for window 1664982730129"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1667914938570_3" label="Window Working Set" name="Aggregate for window 1667914938570"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1667916918664_4" label="Window Working Set" name="Aggregate for window 1667916918664"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1669260391634_5" label="Window Working Set" name="Aggregate for window 1669260391634"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1669271621784_6" label="Window Working Set" name="Aggregate for window 1669271621784"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1669714563541_7" label="Window Working Set" name="Aggregate for window 1669714563541"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1669720250321_8" label="Window Working Set" name="Aggregate for window 1669720250321"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1670829556023_10" label="Window Working Set" name="Aggregate for window 1670829556023"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1671535407062_11" label="Window Working Set" name="Aggregate for window 1671535407062"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1671536503670_12" label="Window Working Set" name="Aggregate for window 1671536503670"/>
+<mruList name="spring batch"/>
+<mruList name="Java_features_new"/>
+</workingSetManager>

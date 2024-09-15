@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;core.algo.linkedList.MyLinkedList&apos; to &apos;MyNode&apos;&#x0D;&#x0A;- Original project: &apos;Ztemp&apos;&#x0D;&#x0A;- Original element: &apos;core.algo.linkedList.MyLinkedList&apos;&#x0D;&#x0A;- Renamed element: &apos;core.algo.linkedList.MyNode&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MyLinkedList&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;core.algo.linkedList{MyLinkedList.java[MyLinkedList" matchStrategy="1" name="MyNode" qualified="false" references="true" similarDeclarations="false" stamp="1671689034291" textual="false" version="1.0"/>
+</session>

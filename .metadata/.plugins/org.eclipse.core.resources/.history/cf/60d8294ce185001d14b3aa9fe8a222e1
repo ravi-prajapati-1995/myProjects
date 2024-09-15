@@ -1,0 +1,75 @@
+package core.algo.matrix;
+
+import java.util.Arrays;
+import java.util.Optional;
+
+public class Test1 {
+	
+	private interface I {
+		default void test() {
+			
+		}
+		static void test1() {
+			
+		}
+		
+		public void test2();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int N = 3; 
+		int matrix[][] = {
+						  {1, 2, 3},
+				          {4, 5, 6},
+				          {7, 8, 9}
+				          };
+		
+//		transpose(matrix, N);
+		
+//		System.out.println(Arrays.deepToString(matrix));
+		
+		Optional.of(null);
+
+	}
+	
+	
+	static void transpose(int matrix[][],int n) {
+		 
+        for(int row =0;row<n;row++) {
+       	 for(int col = 0;col <n;col++) {
+       		 if(row < col) {
+       			 int temp = matrix[row][col];
+       			 
+       			 matrix[row][col] = matrix[col][row];
+       			 matrix[col][row] = temp;
+       		 }
+       	 }
+       	 
+        }
+        
+   
+	}
+	
+	static void rotateby90(int matrix[][], int n) { 
+         int[][] temp = new int[n][n];
+         int idx = 0;
+         for(int row =n-1;row>=0;row--) {
+        	 for(int col = 0;col <n;col++) {
+        		 temp[idx][col] = matrix[col][row];
+        	 }
+        	 idx++;
+         }
+         
+//         System.out.println(Arrays.deepToString(temp));
+         
+         for(int row =0;row<n;row++) {
+        	 for(int col = 0;col <n;col++) {
+        		 matrix[row][col] = temp[row][col];
+        	 }
+        	 
+         }
+         
+    }
+
+}

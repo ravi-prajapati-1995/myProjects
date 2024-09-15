@@ -1,0 +1,120 @@
+package com.spring.batch.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "trade_index")
+public class TradeIndex {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
+	private String series_reference;
+	private String period;
+	private Double data_value;
+	private String status;
+	private String units;
+	private int magntude;
+	private String subject;
+	@Column("group_name")
+	private String group;
+	private String title1;
+	private String title2;
+	private String title3;
+	private String title4;
+	private String title5;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getSeries_reference() {
+		return series_reference;
+	}
+	public void setSeries_reference(String series_reference) {
+		this.series_reference = series_reference;
+	}
+	public String getPeriod() {
+		return period;
+	}
+	public void setPeriod(String period) {
+		this.period = period;
+	}
+	public Double getData_value() {
+		return data_value;
+	}
+	public void setData_value(Double data_value) {
+		this.data_value = data_value;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getUnits() {
+		return units;
+	}
+	public void setUnits(String units) {
+		this.units = units;
+	}
+	public int getMagntude() {
+		return magntude;
+	}
+	public void setMagntude(int magntude) {
+		this.magntude = magntude;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public String getGroup() {
+		return group;
+	}
+	public void setGroup(String group) {
+		this.group = group;
+	}
+	public String getTitle1() {
+		return title1;
+	}
+	public void setTitle1(String title1) {
+		this.title1 = title1;
+	}
+	public String getTitle2() {
+		return title2;
+	}
+	public void setTitle2(String title2) {
+		this.title2 = title2;
+	}
+	public String getTitle3() {
+		return title3;
+	}
+	public void setTitle3(String title3) {
+		this.title3 = title3;
+	}
+	public String getTitle4() {
+		return title4;
+	}
+	public void setTitle4(String title4) {
+		this.title4 = title4;
+	}
+	public String getTitle5() {
+		return title5;
+	}
+	public void setTitle5(String title5) {
+		this.title5 = title5;
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,52 @@
+package com.ravi.test;
+
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.JobParametersInvalidException;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+
+@SpringBootApplication
+public class SpringBatchTesApplication {
+	@Autowired
+	JobLauncher jobLauncher;
+	
+	@Autowired
+	Job job;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBatchTesApplication.class, args);
+	}
+	
+//	@EventListener(ApplicationReadyEvent.class)
+	public void doSomethingAfterStartup() {
+	    System.out.println("hello world, I have just started up");
+	    
+	    try {
+	    	JobParameters Parameters = new JobParametersBuilder()
+	    	        .addLong("startAt", System.currentTimeMillis()).toJobParameters();
+			jobLauncher.run(job, Parameters);
+		} catch (JobExecutionAlreadyRunningException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JobRestartException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JobInstanceAlreadyCompleteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JobParametersInvalidException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;com.ravi.sort&apos; to &apos;java_modularization/src/com.ravi.sort.algo&apos;&#x0D;&#x0A;- Original project: &apos;module-1-service-jar&apos;&#x0D;&#x0A;- Destination element: &apos;java_modularization/src/com.ravi.sort.algo&apos;&#x0D;&#x0A;- Original element: &apos;module-1-service-jar/src/com.ravi.sort&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=java_modularization/src&lt;com.ravi.sort.algo" element1="/src&lt;com.ravi.sort" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1669976799250" version="1.0"/>
+</session>

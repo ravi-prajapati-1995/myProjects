@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/spring-batch-example-1/src/main/resources/.~lock.test.xlsx#" element2="/spring-batch-example-1/src/main/resources/.~lock.users.csv#" element3="/spring-batch-example-1/src/main/resources/.~lock.Wholesale_sourcedata.csv#" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1671682890303"/>
+</session>

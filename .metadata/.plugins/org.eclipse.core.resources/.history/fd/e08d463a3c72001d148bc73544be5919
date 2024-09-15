@@ -1,0 +1,4 @@
+module com.ravi.consumer {
+	requires java.logging;
+	exports com.ravi.sort;
+}

@@ -1,0 +1,35 @@
+package com.ravi.consumer;
+
+import java.util.List;
+import java.util.logging.Logger;
+
+import com.ravi.sort.MySortinUtil;
+
+public class MyConsumer {
+	private static Logger log = Logger.getLogger(MyConsumer.class.getName());
+	public static void main(String[] args) {
+		
+		MySortinUtil msu = new MySortinUtil();
+		List<String> li = msu.sort(List.of("Ravi","Nitin","Roni","Lakhvir","Rupin","Nimrat"));
+		
+		log.info(li.toString());
+		
+		System.out.println(test());
+	}
+	
+	public static void thro() {
+		throw new RuntimeException();
+	}
+	public static int test() {
+		
+		try {
+			return 1;
+		} catch (Exception e) {
+			return 2;
+		} finally {
+			return 3;
+		}
+		
+		
+	}
+}

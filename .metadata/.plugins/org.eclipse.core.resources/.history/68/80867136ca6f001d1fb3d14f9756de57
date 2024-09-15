@@ -1,0 +1,24 @@
+package com.learning.junit;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.learning.junit.service.BussinessService;
+
+@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	void contextLoads() {
+		BussinessService bs = new BussinessService();
+		bs.findTheGreatestFromAllData();
+		
+	}
+	
+
+}
+
+
+class MyDataService implements DataService {
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;mapper&apos; from expression &apos;a -&gt; a.stream().collect(Collectors.joining(&quot;,&quot;).toString())&apos;&#x0D;&#x0A;- Original project: &apos;Ztemp&apos;&#x0D;&#x0A;- Variable name: &apos;mapper&apos;&#x0D;&#x0A;- Destination method: &apos;functional_programming.FP02.checkFlatMap(...)&apos;&#x0D;&#x0A;- Variable expression: &apos;a -&gt; a.stream().collect(Collectors.joining(&quot;,&quot;).toString())&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;mapper&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;functional_programming{FP02.java" name="mapper" replace="true" selection="1579 59" stamp="1669555558538" varType="false" version="1.0"/>
+</session>

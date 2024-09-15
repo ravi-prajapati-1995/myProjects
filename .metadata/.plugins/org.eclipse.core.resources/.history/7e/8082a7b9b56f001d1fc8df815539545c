@@ -1,0 +1,17 @@
+package com.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import com.test.expamples.MyMath;
+
+class MathTest {
+
+	@Test
+	void test() {
+		MyMath math = new MyMath();
+		
+	}
+
+}

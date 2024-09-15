@@ -1,0 +1,17 @@
+package com.learning.junit;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	void contextLoads() {
+		Math math = new Math();
+		int arr[] = {1,2,3,4};
+		int sum = math.sum(arr);
+		
+	}
+
+}

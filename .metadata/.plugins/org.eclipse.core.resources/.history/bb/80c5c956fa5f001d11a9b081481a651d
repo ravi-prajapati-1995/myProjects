@@ -1,0 +1,5 @@
+package com.spring.batch.repo;
+
+public class MyJobRepository {
+
+}

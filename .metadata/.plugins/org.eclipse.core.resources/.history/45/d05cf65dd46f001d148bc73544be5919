@@ -1,0 +1,46 @@
+package com.learning.junit;
+
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
+
+import org.assertj.core.api.AssertProvider;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.learning.junit.service.BussinessService;
+import com.learning.junit.service.DataService;
+
+@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	void test_with_stub() {
+		BussinessService bs = new BussinessService(new MyDataService());
+		int result = bs.findTheGreatestFromAllData();
+		assertThat(result).isEqualTo(58);
+	}
+	
+
+}
+
+
+class MyDataService implements DataService {
+
+	@Override
+	public int[] retrieveAllData() {
+		// TODO Auto-generated method stub
+		return new int[] {12,34,56,7};
+	}
+	
+}
+
+class MyDataService1 implements DataService {
+
+	@Override
+	public int[] retrieveAllData() {
+		// TODO Auto-generated method stub
+		return new int[] {12};
+	}
+	
+}

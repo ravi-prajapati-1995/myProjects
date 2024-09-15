@@ -1,0 +1,21 @@
+package com.learning.junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+
+import org.junit.jupiter.api.Test;
+
+import com.learning.junit.service.BussinessService;
+import com.learning.junit.service.DataService;
+
+class SimpleMockitoTest {
+
+	@Test
+	void test() {
+		DataService dataServiceMock = mock(DataService.class);
+		
+		BussinessService bs = new BussinessService(dataServiceMock);
+		bs.findTheGreatestFromAllData();
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.spring.batch.configuration;
+
+public class TradeIndexProcessor {
+
+}

@@ -1,0 +1,15 @@
+package com.test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MathTest {
+
+	@Test
+	void test() {
+		Math math = new Math();
+		
+	}
+
+}

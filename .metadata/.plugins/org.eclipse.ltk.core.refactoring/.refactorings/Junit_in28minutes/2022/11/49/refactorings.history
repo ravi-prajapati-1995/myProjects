@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move type &apos;com.learning.junit.service.DataService&apos; in &apos;com.learning.junit.service.BussinessService.java&apos; to new file&#x0D;&#x0A;- Original project: &apos;Junit_in28minutes&apos;&#x0D;&#x0A;- Original element: &apos;com.learning.junit.service.DataService&apos;" description="Move type &apos;DataService&apos; to new file" field="false" final="true" flags="786438" id="org.eclipse.jdt.ui.move.inner" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.learning.junit.service{BussinessService.java[DataService" mandatory="false" possible="false" stamp="1669714931116" version="1.0"/>
+</session>

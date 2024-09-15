@@ -1,0 +1,23 @@
+package core.threadTest;
+
+public class Test2 {
+
+}
+
+
+class NewThread implements Runnable {
+	
+	String name;
+	Thread t;
+
+	public NewThread(String name) {
+		this.name = name;
+		t = new Thread(this,name);
+	}
+	@Override
+	public void run() {
+		
+		
+	}
+	
+}

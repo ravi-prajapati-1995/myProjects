@@ -1,0 +1,17 @@
+package com.learning.junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+
+import java.awt.List;
+
+import org.junit.jupiter.api.Test;
+
+class ListTests {
+
+	@Test
+	void test() {
+		java.util.List<String> listMock = mock(List<String>.class);
+	}
+
+}

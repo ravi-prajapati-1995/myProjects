@@ -1,0 +1,9 @@
+package com.learning.junit;
+
+import java.util.Arrays;
+
+public class Math {
+	public int sumt(int[] arr) {
+		return Arrays.stream(arr).sum();
+	}
+}

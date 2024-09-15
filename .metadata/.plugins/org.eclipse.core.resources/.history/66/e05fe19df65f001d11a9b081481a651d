@@ -1,0 +1,104 @@
+package com.spring.batch.configuration;
+
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.step.builder.StepBuilder;
+import org.springframework.batch.item.data.RepositoryItemWriter;
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.LineMapper;
+import org.springframework.batch.item.file.mapping.DefaultLineMapper;
+import org.springframework.batch.item.file.mapping.FieldSetMapper;
+import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
+import org.springframework.batch.item.file.transform.FieldSet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.validation.BindException;
+
+import com.spring.batch.entity.TradeIndex;
+import com.spring.batch.repo.TradeIndexRepository;
+
+@Configuration
+@EnableBatchProcessing
+public class SpringBatchConfiguration {
+	
+	@Autowired
+	private JobBuilder jobBuilder;
+	
+	@Autowired
+	private StepBuilderF stepBuilder;
+	
+	@Autowired
+	private TradeIndexRepository repo;
+
+	
+	public FlatFileItemReader<TradeIndex> reader() {
+		FlatFileItemReader<TradeIndex> reader = new FlatFileItemReader<>();
+		reader.setResource(new FileSystemResource("G:\\overseas-trade.csv"));
+//		reader.setName("");
+		reader.setLinesToSkip(1);
+		reader.setLineMapper(lineMapper());
+		
+		return reader;
+	}
+	
+	@Bean
+	private LineMapper<TradeIndex> lineMapper() {
+		DefaultLineMapper<TradeIndex> lineMapper = new DefaultLineMapper<>();
+		lineMapper.setLineTokenizer(new DelimitedLineTokenizer());
+		lineMapper.setFieldSetMapper(new TradeIndexFieldMapper());
+		
+		return lineMapper;
+	}
+	
+	@Bean
+	private TradeIndexProcessor getProcessor() {
+		return new TradeIndexProcessor();
+	}
+	
+	@Bean
+	private RepositoryItemWriter<TradeIndex> getwriter() {
+		RepositoryItemWriter<TradeIndex> writer = new RepositoryItemWriter<>();
+		writer.setRepository(repo);
+		writer.setMethodName("save");
+		
+		return writer;
+		
+	}
+	
+	@Bean
+	private Step step1( ) {
+		return stepBuilder.
+	}
+	
+	
+	//UNITS	MAGNTUDE	Subject	Group	Series_title_1	Series_title_2	Series_title_3	Series_title_4	Series_title_5
+
+	protected static class TradeIndexFieldMapper implements FieldSetMapper<TradeIndex> {
+
+		@Override
+		public TradeIndex mapFieldSet(FieldSet fieldSet) throws BindException {
+			TradeIndex ti = new TradeIndex();
+			ti.setSeries_reference(fieldSet.readRawString(0));
+			ti.setPeriod(fieldSet.readString(1));
+			ti.setData_value(fieldSet.readDouble(2));
+			ti.setStatus(fieldSet.readString(3));
+			ti.setUnits(fieldSet.readString(4));
+			ti.setMagntude(fieldSet.readInt(5));
+			ti.setSubject(fieldSet.readString(6));
+			ti.setGroup(fieldSet.readString(7));
+			ti.setTitle1(fieldSet.readString(8));
+			ti.setTitle2(fieldSet.readString(9));
+			ti.setTitle3(fieldSet.readString(10));
+			ti.setTitle4(fieldSet.readString(11));
+			ti.setTitle5(fieldSet.readString(12));
+			
+			
+			return ti;
+		}
+		
+	}
+}

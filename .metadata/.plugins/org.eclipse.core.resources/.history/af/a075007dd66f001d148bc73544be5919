@@ -1,0 +1,51 @@
+package com.learning.junit;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.NoSuchElementException;
+
+import org.junit.jupiter.api.Test;
+
+import com.learning.junit.service.BussinessService;
+import com.learning.junit.service.DataService;
+
+class SimpleMockitoTest {
+
+	@Test
+	void test() {
+		
+		DataService dataServiceMock = mock(DataService.class);
+		when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{1,2,4});
+		BussinessService bs = new BussinessService(dataServiceMock);
+		
+		int result = bs.findTheGreatestFromAllData();
+		assertThat(result).isEqualTo(4);
+	}
+	
+	@Test
+	void One_value_test() {
+		
+		DataService dataServiceMock = mock(DataService.class);
+		when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{4});
+		BussinessService bs = new BussinessService(dataServiceMock);
+		
+		int result = bs.findTheGreatestFromAllData();
+		assertThat(result).isEqualTo(4);
+	}
+	
+	@Test
+	void no_value_test() {
+		
+		DataService dataServiceMock = mock(DataService.class);
+		when(dataServiceMock.retrieveAllData()).thenReturn(new int[]{});
+		BussinessService bs = new BussinessService(dataServiceMock);
+		
+		int result = bs.findTheGreatestFromAllData();
+		assertThatExceptionOfType(NoSuchElementException.class);
+	}
+
+}

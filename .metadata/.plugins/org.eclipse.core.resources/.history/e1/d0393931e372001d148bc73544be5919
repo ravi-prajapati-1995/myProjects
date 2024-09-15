@@ -1,0 +1,36 @@
+package com.ravi.sort;
+
+public class TestClass {
+
+}
+
+
+abstract class Student {
+	private Long id;
+	private String name;
+	private String email;
+	
+	
+	Student(Long id, String name,String email) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+	}
+	
+	public void printDetails() {
+		System.out.println(String.format("Id: %s, Name: %s, email : %s", id,name,email));
+	}
+	
+	abstract String getStudentName();
+}
+
+
+class UsStudent extends Student {
+
+	@Override
+	String getStudentName() {
+		
+		return this.getStudentName();
+	}
+	
+}

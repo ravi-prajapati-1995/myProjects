@@ -1,0 +1,12 @@
+package functional_programming;
+
+import java.util.List;
+
+public class Test1 {
+	public static void main(String[] args) {
+		List<Integer> li = List.of(5,9,4,10,1,7,6,2);
+		
+		Integer sum = li.stream().reduce(0,(a,b) -> a*b);
+		System.out.println(sum);
+	}
+}

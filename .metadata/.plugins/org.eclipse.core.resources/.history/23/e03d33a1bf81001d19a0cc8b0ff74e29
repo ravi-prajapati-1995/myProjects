@@ -1,0 +1,45 @@
+package core.algo.linkedList;
+
+public class MyNode {
+	int data;
+	MyNode next;
+	
+	MyNode(int data) {
+		this.data = data;
+	}
+}
+
+
+class MyLinkedList {
+	MyNode head;
+	
+	public MyLinkedList(List<Integer> arr) {
+		for(int i: arr) {
+			add(i);
+		}
+	}
+	void add(int data) {
+		if(head == null) {
+			head = new MyNode(data);
+		} else {
+			MyNode temp = head;
+			
+			while(temp.next != null) {
+				temp = temp.next;
+			}
+			
+			temp.next = new MyNode(data);
+		}
+	}
+	
+	
+	void print() {
+		MyNode temp = head;
+		while(temp != null) {
+			System.out.println(temp.data+"\t");
+			temp = temp.next;
+		}
+	}
+}
+
+

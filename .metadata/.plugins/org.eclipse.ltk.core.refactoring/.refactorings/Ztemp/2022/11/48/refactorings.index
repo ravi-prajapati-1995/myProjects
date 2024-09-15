@@ -1,0 +1,3 @@
+1669297792517	Extract local variable 'accumulator'
+1669297908743	Extract local variable 'mapper'
+1669298556976	Extract method 'calculateAndPrint'

@@ -1,0 +1,38 @@
+package core.algo.matrix;
+
+import java.util.Arrays;
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int N = 3; 
+		int matrix[][] = {
+						  {1, 2, 3},
+				          {4, 5, 6},
+				          {7, 8, 9}
+				          };
+		
+		rotateby90(matrix, N);
+		
+		System.out.println(Arrays.deepToString(matrix));
+
+	}
+	
+	
+	static void rotateby90(int matrix[][], int n) { 
+         int[][] temp = matrix;
+         int idx = 0;
+         for(int row =n-1;row>=0;row--) {
+        	 for(int col = 0;col <n;col++) {
+        		 matrix[idx][col] = temp[col][row];
+        	 }
+        	 idx++;
+         }
+         
+         System.out.println(Arrays.deepToString(temp));
+         
+         System.out.println(Arrays.deepToString(matrix));
+    }
+
+}

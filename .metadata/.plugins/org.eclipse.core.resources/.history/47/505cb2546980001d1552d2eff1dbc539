@@ -1,0 +1,106 @@
+package com.ravi.test.configuration;
+
+import javax.sql.DataSource;
+
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.builder.StepBuilder;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.database.JpaItemWriter;
+import org.springframework.batch.item.database.builder.JpaItemWriterBuilder;
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
+import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.transaction.PlatformTransactionManager;
+
+import com.ravi.test.domain.Employee;
+import com.ravi.test.mapper.EmployeeProcessor;
+
+import jakarta.persistence.EntityManager;
+
+@Configuration
+@EnableBatchProcessing
+public class BatchConfiguration {
+
+
+	 @Autowired
+	 EntityManager entityManager;
+	 
+	 @Autowired
+	 DataSource dataSource;
+	 
+	 @Autowired 
+	 private PlatformTransactionManager transactionManager;
+	 
+	    @Autowired
+	    EmployeeProcessor employeeProcessor;
+	    
+	    @Value("${file.input}")
+	    private String fileInput;
+	    
+	    
+	    @Bean
+	     JobRepository getJobRepository() throws Exception {
+	        JobRepositoryFactoryBean factory = new JobRepositoryFactoryBean();
+	        factory.setDataSource(dataSource);
+	        factory.setTransactionManager(transactionManager);
+	        factory.afterPropertiesSet();
+	        return (JobRepository) factory.getObject();
+	    }
+	    
+	    @Bean
+	    public FlatFileItemReader<Employee> reader() {
+	        return new FlatFileItemReaderBuilder().name("coffeeItemReader")
+	          .resource(new ClassPathResource(fileInput))
+	          .delimited()
+	          .names(new String[] { "Name", "Department", "Designation","Genus","TotalWorkExp_InYrs","NagarroWorkExp_InYrs","BaseLocation" })
+	          .fieldSetMapper(new BeanWrapperFieldSetMapper() {{
+	              setTargetType(Employee.class);
+	          }})
+	          .build();
+	    }
+	    
+	    @Bean
+	    public JpaItemWriter<Employee> writer(DataSource dataSource) {
+	        return new JpaItemWriterBuilder<Employee>()
+	        		.entityManagerFactory(entityManager.getEntityManagerFactory())
+	        		
+	        		.build();
+	    }
+	    
+	    @Bean
+	    public EmployeeProcessor processor() {
+	    	return new EmployeeProcessor();
+	    }
+	    
+	    @Bean
+	    public Step step(JobRepository jobRepository,ItemWriter<Employee> writer) {
+	    	return new StepBuilder("first_step", jobRepository)
+	    			.<Employee,Employee>chunk(100)
+	    			.transactionManager(transactionManager)
+	    			.reader(reader())
+	    			.processor(processor())
+	    			.writer(writer)
+	    			.build();
+	    }
+	    
+	    @Bean
+	     Job job(Step step,JobRepository jobRepository) {
+	    	return new JobBuilder("myJob",jobRepository)
+	    	.flow(step)
+	    	.end()
+	    	.build();
+	    	
+	    }
+	    
+	   
+ 
+}

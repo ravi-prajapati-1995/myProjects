@@ -1,0 +1,11 @@
+package core.algo.linkedList;
+
+import java.util.List;
+
+public class Test2 {
+	public static void main(String[] args) {
+		MyLinkedList li = new MyLinkedList(List.of(0,1,1,2,0,1,0));
+		
+		li.print();
+	}
+}

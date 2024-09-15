@@ -1,0 +1,13 @@
+package functional_programming;
+
+import java.util.List;
+import java.util.stream.IntStream;
+
+public class Test1 {
+	public static void main(String[] args) {
+//		List<Integer> li = 
+		
+		Integer sum = IntStream.range(1, 6).reduce(1,(a,b) -> a*b);
+		System.out.println(sum);
+	}
+}

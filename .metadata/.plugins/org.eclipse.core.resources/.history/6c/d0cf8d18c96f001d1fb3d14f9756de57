@@ -1,0 +1,16 @@
+package com.learning.junit.service;
+
+public class BussinessService {
+	
+	private DataService dataService;
+
+	public int findTheGreatestFromAllData() {
+		int[] data = dataService.retrieveAllData();
+		
+	}
+
+}
+
+interface DataService {
+	
+}

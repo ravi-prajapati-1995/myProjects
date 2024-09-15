@@ -1,0 +1,35 @@
+package com.spring.batch.configuration;
+
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.step.builder.StepBuilder;
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.FileSystemResource;
+
+import com.spring.batch.entity.TradeIndex;
+import com.spring.batch.repo.TradeIndexRepository;
+
+@Configuration
+@EnableBatchProcessing
+public class SpringBatchConfiguration {
+	
+	@Autowired
+	private JobBuilder jobBuilder;
+	
+	@Autowired
+	private StepBuilder stepBuilder;
+	
+	@Autowired
+	private TradeIndexRepository repo;
+
+	
+	public FlatFileItemReader<TradeIndex> reader() {
+		FlatFileItemReader<TradeIndex> reader = new FlatFileItemReader<>();
+		reader.setResource(new FileSystemResource("G:\\overseas-trade.csv"));
+	}
+	
+	
+}

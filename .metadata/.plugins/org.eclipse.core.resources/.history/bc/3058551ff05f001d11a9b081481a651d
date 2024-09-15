@@ -1,0 +1,9 @@
+package com.spring.batch.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.spring.batch.entity.TradeIndex;
+
+public interface TradeIndexRepository  extends JpaRepository<TradeIndex	, Long>{
+
+}

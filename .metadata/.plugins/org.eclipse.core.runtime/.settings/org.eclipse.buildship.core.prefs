@@ -1,0 +1,12 @@
+arguments=arg
+auto.sync=true
+eclipse.preferences.version=1
+experimental.module.support=true
+gradle.build.scans=true
+gradle.distribution=GRADLE_DISTRIBUTION(LOCAL_INSTALLATION(C\:\\gradle-7.6))
+gradle.offline.mode=true
+gradle.user.home=C\:\\gradle-7.6
+java.home=C\:\\Program Files\\Java\\jdk-19
+jvm.arguments=
+show.console.view=true
+show.executions.view=true

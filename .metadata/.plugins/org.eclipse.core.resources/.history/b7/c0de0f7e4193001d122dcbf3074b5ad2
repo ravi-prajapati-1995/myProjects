@@ -1,0 +1,88 @@
+package functional_programming;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
+import java.util.function.Function;
+import java.util.function.IntSupplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+public class Test1 {
+	public static void main(String[] args) {
+		List<Integer> li = List.of(1,2,3,2,1,3,1,1,1,3,4,5,6,7);
+//		Long abc = li.stream().collect(
+//				Collectors.groupingBy(
+//						Function.identity(),
+//						Collectors.counting()
+//						)
+//				
+//				).entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getValue).get();
+//		
+//		System.out.println(abc);
+		Test1 t = new Test1();
+		LinkedList ll = t.new LinkedList();
+		ll.add(1);
+		ll.add(2);
+		ll.add(3);
+		
+		ll.printList();
+		ll.reverseNode();
+		System.out.println();
+		ll.printList();
+	}
+	
+	
+	class Node {
+		  int data;
+		    Node next;
+		  
+		    // constructor
+		    Node(int data) {
+		        this.data = data;
+		        this.next = null;
+		    }
+	}
+	class LinkedList {
+	    Node head;
+	    int size=0;
+	    
+
+	    // constructor
+	    LinkedList() {
+	        head = null;
+	    }
+
+	    // method to add a new node to the list
+	    public void add(int data) {
+	        Node newNode = new Node(data);
+	        newNode.next = head;
+	        head = newNode;
+	        size++;
+	    }
+
+	    // method to print the list
+	    public void printList() {
+	        Node current = head;
+	        while (current != null) {
+	            System.out.print(current.data + " ");
+	            current = current.next;
+	        }
+	    }
+	    
+	    public void reverseNode() {
+	    	if(size > 1) {
+	    		Node next = head.next;
+	    		
+	    		
+	    		while(head != null && head.next != null) {
+	    			Node temp = next.next;
+	    			next.next = head;
+	    			head = next;
+	    			next = temp;
+	    		}
+	    	}
+	    }
+	}
+}
